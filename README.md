@@ -1,2 +1,2 @@
 # CodingDojo
-Learning experiences throughout, Coding Dojo
+My experiences throughout, Coding Dojo Bootcamp
