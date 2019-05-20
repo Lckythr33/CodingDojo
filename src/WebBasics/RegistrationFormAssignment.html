@@ -7,29 +7,34 @@
 <body>
     <form action="process.php" method="post">
         <h1>My Registration Form</h1>
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name">
-        <br /><br />
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name">
-        <br /><br />
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email">
-        <br /><br />
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <br /><br />
-        <label for="pw_confirm">Password Confirmation:</label>
-        <input type="password" id="pw_confirm" name="password_confirmation">
-        <br /><br />
-
-        <!-- insert birthday form -->
-        <label for="birthday">Birthday:</label>
-        <!-- quick select form-->
-        <input type="date" id="birthday" name="birthday">
-
-        <br />
-        <br />
+      
+        <table>
+            <tr>
+                <td><label for="first_name">First Name:</label></td>
+                <td><input type="text" id="first_name" name="first_name"></td>
+            </tr>
+            <tr>
+                <td><label for="last_name">Last Name:</label></td>
+                <td><input type="text" id="last_name" name="last_name"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="text" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" name="password"></td>
+            </tr>
+            <tr>
+                <td><label for="pw_confirm">Password Confirmation:</label></td>
+                <td><input type="password" id="pw_confirm" name="password_confirmation"></td>
+            </tr>
+           <tr> <!-- insert birthday form -->
+                <td><label for="birthday">Birthday:</label></td>
+                <!-- quick select form-->
+                <td><input type="date" id="birthday" name="birthday"></td>
+           </tr>
+        </table>
 
         <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label>
