@@ -1,0 +1,185 @@
+﻿* {
+margin: 0px;
+padding: 0px;
+}
+
+input{
+text-align:center;
+}
+
+p.textsize{
+color:white;
+padding-left: 80px;
+font-size:20px;
+}
+
+#nav a{
+color: white;
+margin: 8px;
+display:inline-block;
+font-size:25px;
+text-decoration: none;
+}
+
+#nav{
+padding: 10px;
+text-align:center;
+height:40px;
+width:780px;
+background-color: #427cad;
+margin-left:100px;
+border-radius:30px;
+}
+
+span{
+color:black;
+}
+
+#wrapper{
+width: 970px;
+padding-bottom:40px;
+/*background-color: #245076;*/
+background: linear-gradient(#245076 10%,85%,#3373a9 85%);
+}
+
+#logo{
+width: 500px;
+margin-right: 120px;
+display: inline-block;
+}
+
+#header{
+}
+
+#header_right{
+padding-top: 10px;
+display: inline-block;
+vertical-align: top;
+}
+
+#header_right a{
+color:yellow;
+}
+
+#search{
+background-color: grey;
+padding: 10px 10px 20px 10px;
+border-radius: 25px;
+height: 40px;
+width:300px;
+text-align:center;
+}
+
+#searcharea{
+-webkit-appearance: none;
+height: 30px;
+width:180px;
+display:inline-block;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+#searchbutton{
+background-color: #245076;
+border: 5px solid black;
+display: inline-block;
+padding: 15px; 
+margin-left: 30px;
+border-radius: 25px;
+color:white;
+}
+
+#links{
+display:inline-block;
+padding: 20px;
+width:180px;
+text-align:center;
+height:280px;
+margin-left:30px;
+margin-top:22px;
+}
+
+#links a{
+text-size:40px;
+display: inline-block;
+font-size: 20px;
+margin-bottom: 3px;
+color:white;
+}
+
+#links span{
+color:yellow;
+display:inline-block;
+}
+
+#textarea{
+color:white;
+margin-top: 30px;
+vertical-align:top;
+text-align:center;
+display:inline-block;
+width: 630px;
+}
+
+#textarea h3{
+color:yellow;
+margin-bottom:10px;
+}
+
+#textarea h4{
+margin-top:15px;
+}
+
+#textarea p{
+margin-bottom:10px;
+}
+
+#midcontent{
+height: 200px;
+width: 970px;
+background-color:white;
+padding-top: 7px;
+border-top:3px solid black;
+}
+
+.textboxes{
+text-align:center;
+width: 300px;
+margin-left: 120px;
+display: inline-block;
+}
+
+.textboxes a{
+color:#3373a9;
+text-decoration:none;
+}
+
+.textboxes ul{
+margin-top:10px;
+}
+
+hr{
+border: 3px solid #73a7d5;
+width:350px;
+margin-bottom:3px;
+}
+
+h2 a{
+color:#7cafdb;
+text-decoration:none;
+margin-left:30px;
+}
+
+h2{
+display:inline-block;
+}
+
+#footerlinks{
+margin: 35px 20px 0px 80px;
+}
+
+#footerlinks p{
+margin-top: 20px;
+text-align:center;
+color:#7cafdb;
+}

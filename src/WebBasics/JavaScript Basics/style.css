@@ -2,6 +2,11 @@
  margin: 0px;
 }
 
+span{
+color: red;
+}
+
+
 h1{
 color: #A6D7DB;
 }
@@ -39,6 +44,7 @@ height: 500px;
 width: 660px;
 vertical-align: top;
 border-radius: 15px;
+color: white;
 }
 
 #bottom{
