@@ -1,7 +1,6 @@
 ﻿*{
 margin: 0px;
 padding: 0px;
-outline: 2px solid black;
 }
 
 #wrapper{
@@ -9,12 +8,12 @@ width: 970px;
 
 }
 
-span{
+span.blue{
 color:blue;
 }
 
 
-#wrapper h1{
+.wrapper h1{
 display:inline-block;
 margin-top:12px;
 margin-left:80px;
@@ -22,12 +21,19 @@ margin-top:25px;
 
 }
 
-#wrapper h2{
+span.red{
+    color:red;
+}
+
+.wrapper h2{
+font-size: 30px;
 color: white;
 margin-top: 5px;
 background-color: blue;
-padding: 10px 0px 0px 20px;
+padding: 10px 0px 10px 20px;
 }
+
+
 
 #site_header{
 width:800px;
@@ -46,4 +52,71 @@ width:80px;
 height:600px;
 width:200px;
 background-color:red;
+}
+
+#side_info{
+width: 196px;
+height:463px;
+margin-top: 20px;
+padding-left:5px;
+}
+
+
+.buttons{
+margin: 20px 0px 10px 0px;
+height: 70px;
+width: 196px;
+}
+
+
+
+.buttons h3{
+
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.buttons h3.button2 {
+    margin-top:10px;
+    background-color:orange;
+}
+
+img.ad_size{
+height: 300px ;
+width: 196px;
+
+}
+img.ad_img{
+height: 140px;
+width: 100px;
+position:relative;
+}
+
+.advertisement{
+background-image: url("images/ad_background.png" );
+height: 310px; 
+text-align: center;
+}
+
+hr{
+margin: 25px 0px 25px 0px;
+}
+
+.ad_button{
+margin: 10px 0px 0px 13px;
+color:white;
+background-color: teal;
+width: 160px;
+border-radius: 15px;
+padding: 5px;
+
+}
+
+.ad_text{
+padding-top:10px;
+font-size: 25px;
+color:white;
 }
