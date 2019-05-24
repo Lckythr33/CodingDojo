@@ -8,7 +8,7 @@ width: 970px;
 }
 
 span.blue{
-color:blue;
+color: #2e6ca1;
 }
 
 
@@ -32,15 +32,13 @@ margin-bottom: 10px;
 font-size: 30px;
 color: white;
 margin-top: 5px;
-background-color: blue;
+background:radial-gradient(#6f98bb,#2d6ca1);
 padding: 10px 0px 10px 20px;
 }
 
 
-
 #site_header{
 width:800px;
-background-color:blue;
 padding: 5px;
 display:inline-block;
 }
@@ -76,7 +74,7 @@ width: 196px;
 
 .buttons h3{
 
-    background-color: blue;
+    background:linear-gradient(#6f98bb,#2d6ca1);
     color: white;
     border-radius: 10px;
     padding: 5px;
@@ -86,7 +84,7 @@ width: 196px;
 
 .buttons h3.button2 {
     margin-top:10px;
-    background-color:orange;
+    background:linear-gradient(#da975b,#e06a01);
 }
 
 img.ad_size{
@@ -102,12 +100,14 @@ position:relative;
 
 .advertisement{
 background-image: url("images/ad_background.png" );
-height: 310px; 
+height: 330px; 
 text-align: center;
+padding-top:20px;
 }
 
 hr{
 margin: 25px 0px 25px 0px;
+border: 1px solid black;
 }
 
 .ad_button{
@@ -158,9 +158,13 @@ display:inline-block;
 display:block;
 }
 
+span.bold{
+font-weight:bold; 
+}
+
 .phonenumber{
 
-color:blue;
+color: #2e6ca1;
 font-size: 20px;
 display: block;
 }
@@ -178,3 +182,53 @@ outline:2px solid black;
 width:200px;
 }
 
+.title{
+ margin-bottom:10px;
+}
+.maincontent ul{
+margin-left: 30px;
+}
+.maincontent ol{
+    margin-left: 30px;
+    width: 600px;
+    }
+
+.maincontent a{
+
+text-decoration: none;
+color:  #2e6ca1;
+
+}
+.mainpicture{
+margin:20px;
+margin-left:80px;
+height: 150px;
+width: 460px;
+}
+
+.htmlpic{
+width: 140px;
+height: 120px;
+display: inline-block;
+}
+
+div.bottomcontent{
+width: 570px;
+padding: 10px 15px 20px 20px;
+border: 6px solid #2e6ca1;
+border-bottom:0;
+margin-top:20px;
+}
+
+.bottomtext{
+display:inline-block;
+width: 400px;
+margin-left:15px;
+}
+
+.bottomcontent a{
+
+text-decoration: none;
+color:  #2e6ca1;
+
+}
