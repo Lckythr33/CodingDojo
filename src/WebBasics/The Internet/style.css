@@ -3,9 +3,8 @@ margin: 0px;
 padding: 0px;
 }
 
-#wrapper{
+.wrapper{
 width: 970px;
-
 }
 
 span.blue{
@@ -18,14 +17,18 @@ display:inline-block;
 margin-top:12px;
 margin-left:80px;
 margin-top:25px;
+}
 
+.space{
+margin-bottom:10px;
 }
 
 span.red{
     color:red;
 }
 
-.wrapper h2{
+.topbanner{
+margin-bottom: 10px;
 font-size: 30px;
 color: white;
 margin-top: 5px;
@@ -57,8 +60,9 @@ background-color:red;
 #side_info{
 width: 196px;
 height:463px;
-margin-top: 20px;
+margin-top: 15px;
 padding-left:5px;
+display: inline-block;
 }
 
 
@@ -77,6 +81,7 @@ width: 196px;
     border-radius: 10px;
     padding: 5px;
     text-align: center;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .buttons h3.button2 {
@@ -110,7 +115,7 @@ margin: 10px 0px 0px 13px;
 color:white;
 background-color: teal;
 width: 160px;
-border-radius: 15px;
+border-radius: 5px;
 padding: 5px;
 
 }
@@ -120,3 +125,56 @@ padding-top:10px;
 font-size: 25px;
 color:white;
 }
+
+.maincontent{
+display:inline-block;
+vertical-align: top;
+margin-left:20px;
+}
+
+.fullbar{
+width: 743px;
+}
+
+.homelogo{
+display:inline-block;
+width: 20px;
+height:20px;
+}
+
+.maincontent h3{
+display:inline-block;
+vertical-align: center;
+}
+
+.phonelogo{
+margin-left: 440px;
+height: 50px;
+width: 50px;
+display:inline-block;
+}
+
+.hours{
+display:block;
+}
+
+.phonenumber{
+
+color:blue;
+font-size: 20px;
+display: block;
+}
+
+.rightinfo{
+    display:inline-block;
+    vertical-align: top;
+    margin-left:5px;
+    text-align: center;
+}
+
+.bodytext{
+display:inline-block;
+outline:2px solid black;
+width:200px;
+}
+
