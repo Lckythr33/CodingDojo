@@ -1,0 +1,187 @@
+*{
+margin: 0px;
+padding: 0px;
+}
+
+.wrapper{
+background-color:black;
+width: 950px;
+padding: 0px 10px 0px 10px;
+}
+
+.contentarea{
+width: 950px;
+background-color: #1a1a1a;
+padding-top:20px;
+color:white;
+}
+
+.contact{
+color:white;
+display:inline-block;
+vertical-align: top;
+margin-top:10px;
+font-size:20px;
+}
+
+.logo{
+display: inline-block;
+margin-right: 490px;
+margin-left:20px;
+}
+
+.nav{
+background:linear-gradient(#565656e8,#232323);
+padding:15px;
+width: 871px;
+display:inline-block;
+height: 22px;
+color:white;
+}
+
+.navend{
+background:linear-gradient(#565656e8,#232323);
+padding:15px;
+display:inline-block;
+border-left: 20px;
+border-color:#515151;
+width: 16px;
+height: 25px;
+vertical-align: bottom; 
+margin: -3px; 
+}
+
+.nav a{
+text-decoration: none;
+color:#b3b1b0;
+margin-right:20px;
+margin-left:20px;
+font-weight: bold;
+}
+.nav p{
+    display:inline-block;
+    color: grey;
+}
+
+.mainpic{
+width:950px;
+}
+
+hr{
+border:3px solid#3b3b3b;
+margin-bottom: 35px;
+margin-top:-4px;
+}
+
+.icons{
+display:inline-block;
+margin-left:13px;
+}
+
+.text{
+    width: 165px;
+    display:inline-block;
+    vertical-align:top;
+    margin-left: 3px;
+}
+
+.text h2{
+color:#ec7829;
+font-size: 18px;
+}
+
+.text h4{
+color:white;
+font-size: 15px;
+}
+
+.ad{
+padding:40px;
+margin-top:35px;
+color:white;
+height:80px;
+margin-bottom:30px;
+/*striped background*/
+background: repeating-linear-gradient(
+  145deg,
+  #000000,
+  #000000 2px,
+  #171718 3px,
+  #0a0a0a 5px
+);
+}
+
+.ad h4{
+    width: 600px;
+    display:inline-block;
+    color:#b3b1b0;
+}
+.ad h2{
+margin: 0px 0px 10px 5px;
+display: inline-block;
+}
+
+.ad_button{
+height:25px;
+width: 120px;
+border-radius: 5px;
+background: linear-gradient(#f4ab74 10%,#ef7f2d 40%);
+text-align: center;
+padding: 5px;
+display:inline-block;
+vertical-align: top;
+margin: -20px 0px 0px 130px
+}
+
+.ad_button a{
+text-decoration: none;
+color:white;
+}
+
+
+.btcontent{
+margin: 30px 20px 25px 18px;
+display:inline-block;
+width: 190px;
+vertical-align: top;
+}
+
+.btcontent h4{
+color: #ec7829;
+margin-bottom:10px;
+}
+
+.btcontent p{
+width: 220px;
+}
+
+.btcontent img{
+border: 4px solid #111010;
+margin-bottom:7px;
+height: 135px;
+widows: 211px;
+}
+
+.totop{
+margin-left: 870px;
+text-decoration: none;
+color:grey;
+}
+
+.contentarea a{
+    text-decoration: none;
+}
+
+.btport{
+    margin-left:20px;
+    display:inline-block;
+    margin-right: 710px
+    }    
+
+.portbutton a{
+display:inline-block;
+text-align: top;
+text-decoration: none;
+color:#ec7829;
+margin-bottom:20px;
+}
