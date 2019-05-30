@@ -1,0 +1,24 @@
+
+//we know that avg is the sum of all
+//the numbers in the array, divided by the
+//amount of numbers in the array.
+
+//create function
+function findAvg(arr){
+
+    //create needed variables
+    var sum=0;
+
+    //go through each number in array
+    for(var i=0;i<arr.length;i++){
+        
+        //add all numbers in array
+        sum = sum + arr[i];
+    }
+
+    //return the average
+    return sum/arr.length;
+}
+//call function by name and provide array data
+var test = findAvg([1,2,3,4,5])
+console.log(test);

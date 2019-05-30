@@ -1,0 +1,8 @@
+Create a wireframe
+iterate on the wireframe
+
+-Create HTML CSS first
+
+iterate on the front end
+
+build the back end2
