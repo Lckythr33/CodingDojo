@@ -34,6 +34,8 @@ class user:
     def test_method(self):
         self.account.deposit(100)		# we can call the BankAccount instance's methods
         print(self.account.balance)
+        
+
 
 jack = user("Jack")
 jack.make_deposit(200).display_user_balance().make_withdraw(100).display_user_balance()
