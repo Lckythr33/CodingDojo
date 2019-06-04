@@ -72,8 +72,20 @@ print(testRet)
 testRet=findMax([])
 print(testRet)
 
+def uAnalysis(list):
+    uDict={'sumTotal':sumTots(list), 'average':avg(list), 'minimum':findMin(list), 
+    'maximum':findMax(list), 'length':findLen(list)}
+    return uDict
+testRet=uAnalysis([37,2,1,-9])
+print(testRet)
 
-
-
+def reverseList(list):
+    for i in range(0,len(list)//2,1):
+        temp = list[i]
+        list[i]= list[len(list)-1-i]
+        list[len(list)-1-i]=temp
+    return list
+testRet=reverseList([37,2,1,-9])
+print(testRet)
 
 

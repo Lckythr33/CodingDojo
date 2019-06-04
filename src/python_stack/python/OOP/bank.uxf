@@ -1,0 +1,18 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>20</x><y>40</y><w>270</w><h>220</h></coordinates><panel_attributes>user
+--
+float balance
+--
+make_withdraw(self,amount)
+display_user_balance(self)
+transfer_money(self,other_user_amount)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>290</y><w>270</w><h>220</h></coordinates><panel_attributes>BankAccount
+--
+float balance
+--
+display_account_info(self)
+yield_interest(self)
+
+withdraw(self,amount)
+deposit(self,amount)
+transfer_money(self,other_user_amount)
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
