@@ -1,0 +1,20 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>110</x><y>130</y><w>270</w><h>190</h></coordinates><panel_attributes>Store
+--
+name
+productList
+--
+add_products(self,new_product)
+sell_products(self,id)
+inflation(self,percent_increase)
+set_clearance(self,category,pecent_discount)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>140</y><w>210</w><h>190</h></coordinates><panel_attributes>Product
+--
+name
+price
+catagory
+--
+update_price(self,new_product)
+print_info(self)
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
