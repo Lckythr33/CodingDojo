@@ -8,12 +8,12 @@ def display():
 @app.route("/play/<times>") 
 def display_times(times):
     print("in the display_times function")  
-    return render_template("indexMany.html",num_times=int(times))
+    return render_template("index.html",num_times=int(times))
 
 @app.route("/play/<times>/<color>") 
 def display_color(times,color):
     print("in the display_times function")  
-    return render_template("indexColor.html",num_times=int(times),box_color=color)
+    return render_template("index.html",num_times=int(times),box_color=color)
 
     
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    

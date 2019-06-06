@@ -5,29 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
-<style>
-.box{
-    width: 400px;
-    height: 400px;
-    background-color: aqua;
-    display:inline-block;
-    margin-left:80px;
-}
-.wrapper{
-    padding:200px;
-    text-align: center;
-}
-</style>
-
 
 <body>
 <div class="wrapper">
     <h1> WELCOME! </h1>
-   <div class="box"></div>
-   <div class="box"></div>
-   <div class="box"></div>
+
+{% if num_times: %}
+{% for i in range(num_times)%}
+<div class="box" style = "background-color:{{box_color}}"></div>
+{%endfor%}
+{% else: %}
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+{%endif%}
 </div>
 </body>
 </html>

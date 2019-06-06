@@ -1,0 +1,11 @@
+.box{
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+    display:inline-block;
+    margin-left:80px;
+}
+.wrapper{
+    padding:200px;
+    text-align: center;
+}
