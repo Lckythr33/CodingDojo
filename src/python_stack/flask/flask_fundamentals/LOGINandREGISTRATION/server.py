@@ -10,6 +10,7 @@ def new_user():
 
 @app.route("/process", methods = ["POST"])
 def create_user():
+    hashed_password = bcrypt.generate_password_hash(request.form['password'])
     is_valid = True
     if len(request.form['first_name']) < 1:
     	is_valid = False
@@ -33,7 +34,7 @@ def create_user():
         'first_name' : request.form['first_name'],
         'last_name' : request.form['last_name'],
         'email' : request.form['email'],
-        'password' : request.form['password']
+        'password' : hashed_password
         }
         query = "INSERT INTO `logindb`.`users` (`first_name`, `last_name`, `email`, `password`) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);"
         user_id = mysql.query_db(query, data)
@@ -55,7 +56,11 @@ def login():
     user = mysql.query_db(query, request.form)
    
     if user:
-        flash("User successfully logged in!")
+        user = user[0]
+        if bcrypt.check_password_hash(user['password'], request.form['password']):
+            flash("User successfully logged in!")
+        else:
+            flash("Correct email, wrong password!")
     else:
         flash("Invalid Credentials!")
     return redirect("/")
