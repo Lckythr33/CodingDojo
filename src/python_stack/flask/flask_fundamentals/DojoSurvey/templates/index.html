@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+</style>
+<body>
+<table>
+    <h1>Create a User</h1>
+<tr>
+   <form action='/result' method='post'>
+    <td>Your Name:</td> <td> <input type='text' name='name'></td>
+</tr>
+  <td><label for="dojo">Dojo Location:</label></td>
+    <td><select id="dojo" name="dojo">
+        <option value="San Jose">San Jose</option>
+        <option value="Burbank">Burbank</option>
+        <option value="Orange County">Orange County</option>
+        <option value="Seattle">Seattle</option>
+    </td>
+    </select> 
+<tr><td>
+    <label for="favorite_language">Favorite Language:</label></td>
+  <td> <select id="favorite_language" name="favorite_language">
+        <option value="Java">Java</option>
+        <option value="C#">C#</option>
+        <option value="C++">C++</option>
+        <option value="Python">Python</option>
+        <option value="JS">JS</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+    </select></td>
+</tr>
+<tr>
+    <td><p>Comment(Optional):</p>
+    <textarea name="comment"></textarea></td>
+</tr>
+</table>
+<input type='submit' value='create user'>
+</form>
+</body>
+</html>
