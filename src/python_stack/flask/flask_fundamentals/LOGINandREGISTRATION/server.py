@@ -1,6 +1,8 @@
 from flask import Flask, render_template, redirect, request, flash, session
 from mysqlconnection import connectToMySQL   # import the function that will return an instance of a connection
+from flask_bcrypt import Bcrypt 
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
 app.secret_key="so secret"
 @app.route("/")
 def new_user():
@@ -18,7 +20,10 @@ def create_user():
     if len(request.form['email']) < 4:
     	is_valid = False
     	flash("Email should be at least 2 characters")
-    
+    if (request.form['password'] != request.form['confirm']):
+    	is_valid = False
+    	flash("Passwords do not match!")
+
     if not is_valid:
         return redirect("/")
     else:   
@@ -34,10 +39,28 @@ def create_user():
         user_id = mysql.query_db(query, data)
     
         print(request.form)
-        flash("Friend successfully added!")
+        flash("User successfully added!")
         return redirect('/') # either way the application should return to the index and display the message
+
+
+
+@app.route("/login", methods = ["POST"])
+def login():
+    mysql = connectToMySQL('loginDB')	 
+    data = {
+    'email' : request.form['email'],
+    'password' : request.form['password']
+    }
+    query = "SELECT * FROM logindb.users WHERE email = %(email)s;"
+    user = mysql.query_db(query, request.form)
    
+    if user:
+        flash("User successfully logged in!")
+    else:
+        flash("Invalid Credentials!")
+    return redirect("/")
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+
