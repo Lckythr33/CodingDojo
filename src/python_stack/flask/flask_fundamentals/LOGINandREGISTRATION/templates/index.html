@@ -9,44 +9,147 @@
 </head>
 <body>
    <div class ="p-5" style=text-align:center>
+
     <h1 class="mb-5">Login and Registration!</h1>
     <div class="w-25" style= "display:inline-block; text-align:left;">
-        <p>{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
-            {% if messages %}                            <!-- check if there are any messages -->
-                {% for message in messages %}            <!-- loop through the messages -->
-                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        <!-- <p>{% with messages = get_flashed_messages() %}    show all messages
+            {% if messages %}                          
+                {% for message in messages %}           
+                    <p>{{message}}</p>                 
                 {% endfor %}
             {% endif %}
-        {% endwith %}</p>
-        <form action="/process" method="POST">
+        {% endwith %}</p> -->
         <h2>Register Here!</h2>
+        {% with errors = get_flashed_messages(category_filter=["registered"]) %}
+        {% if errors %}
+        <div class="alert alert-success" >
+            {%- for msg in errors %}
+            {{ msg }}
+            {% endfor -%}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <form action="/process" method="POST">
+        
             <div class="form-group">
                 <label for="first_name">First Name:</label>
                 <input type="first_name" class="form-control" name="first_name" placeholder="Enter First Name">
+                {% with errors = get_flashed_messages(category_filter=["first_name"]) %}
+                    {% if errors %}
+                    <div class="alert alert-danger">
+                        {%- for msg in errors %}
+                        {{ msg }}
+                        {% endfor -%}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
             </div>
             <div class="form-group">
                 <label for="last_name">Last Name:</label>
                 <input type="last_name" class="form-control" name="last_name" placeholder="Enter Last Name">
+                {% with errors = get_flashed_messages(category_filter=["last_name"]) %}
+                {% if errors %}
+                <div class="alert alert-danger">
+                    {%- for msg in errors %}
+                    {{ msg }}
+                    {% endfor -%}
+                </div>
+                {% endif %}
+                {% endwith %}
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                {% with errors = get_flashed_messages(category_filter=["email"]) %}
+                {% if errors %}
+                <div class="alert alert-danger">
+                    {%- for msg in errors %}
+                    {{ msg }}
+                    {% endfor -%}
+                </div>
+                {% endif %}
+                {% endwith %}
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                {% with errors = get_flashed_messages(category_filter=["upper"]) %}
+                {% if errors %}
+                <div class="alert alert-danger">
+                    {%- for msg in errors %}
+                    {{ msg }}
+                    {% endfor -%}
+                </div>
+                {% endif %}
+                {% endwith %}
+
+            {% with errors = get_flashed_messages(category_filter=["digit"]) %}
+            {% if errors %}
+            <div class="alert alert-danger">
+                {%- for msg in errors %}
+                {{ msg }}
+                {% endfor -%}
             </div>
+            {% endif %}
+            {% endwith %}
+    
+        </div>
+            
             <div class="form-group">
                 <label for="confirm">Confirm Password:</label>
                 <input type="confirm" class="form-control" name="confirm" placeholder="Confirm Password">
+                {% with errors = get_flashed_messages(category_filter=["password"]) %}
+                {% if errors %}
+                <div class="alert alert-danger">
+                    {%- for msg in errors %}
+                    {{ msg }}
+                    {% endfor -%}
+                </div>
+                {% endif %}
+                {% endwith %}
             </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     </div>
-    <div class="w-25 ml-5" style="display:inline-block; text-align:left; vertical-align:top">
+
+
+<!-- beginning of login form -->
+    <div class="w-25 ml-5" style="display:inline-block; text-align:left; vertical-align:top;">
     
         <form action="/login" method="POST">
             <h2>Login Here!</h2>
+   {% with errors = get_flashed_messages(category_filter=["loggedin"]) %}
+            {% if errors %}
+            <div class="alert alert-success" >
+                {%- for msg in errors %}
+                {{ msg }}
+                {% endfor -%}
+            </div>
+            {% endif %}
+            {% endwith %}
+            
+   {% with errors = get_flashed_messages(category_filter=["invalidcred"]) %}
+            {% if errors %}
+            <div class="alert alert-danger" >
+                {%- for msg in errors %}
+                {{ msg }}
+                {% endfor -%}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+   {% with errors = get_flashed_messages(category_filter=["rightemail"]) %}
+            {% if errors %}
+            <div class="alert alert-danger" >
+                {%- for msg in errors %}
+                {{ msg }}
+                {% endfor -%}
+            </div>
+            {% endif %}
+            {% endwith %}
+
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -55,7 +158,11 @@
                     <label for="password">Password:</label>
                     <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+                {% if session['user'] %}
+                    <a href="/logout" class="btn btn-primary">Log Out</a>
+                {% else %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                {% endif %}
     </form>
     </div>
 </div>  
