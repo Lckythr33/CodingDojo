@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    #gold-count{
+            border: 2px solid black;
+            padding: 0px 50px;
+            }
+    form{
+        display:inline-block;
+    }
+    .red{
+        background-color:red;
+        color:white;
+    }
+    .green{
+        background-color:green;
+        color:white;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <title>Ninja Gold</title>
+</head>
+<body style= "padding-bottom:20px;">
+    <h4>Your Gold:<span id="gold-count">{{ request.session.gold}}</span></h4> 
+   
+    <!-- <form action='/reset' method="post">
+    <input type="submit" value="reset"/>
+     -->
+    <div class="locations">
+    <form action='/process_money' method="post">
+        {% csrf_token %}
+    <div class="row">
+            <div class="col s12 m7"  style="width: 200px;">
+              <div class="card">
+                <div class="card-image">
+                  <img src="../static/imgs/farm.png">
+                  <span class="card-title black-text">Farm</span>
+                </div>
+                <div class="card-content">
+                  <p>Earn from 10-20 Gold!</p>
+                </div>
+                <div class="card-action">
+                    <input type="hidden" name="building" value="farm" />
+                    <input type="submit" value="Find Gold!"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+    <form action='/process_money' method="post">
+        {% csrf_token %}
+    <div class="row">
+            <div class="col s12 m7" style="width: 200px;">
+              <div class="card">
+                <div class="card-image">
+                  <img src="../static/imgs/cave.png">
+                  <span class="card-title black-text">Cave</span>
+                </div>
+                <div class="card-content">
+                  <p>Earn from 5-10 Gold!</p>
+                </div>
+                <div class="card-action">
+                    <input type="hidden" name="building" value="cave" />
+                    <input type="submit" value="Find Gold!"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+    <form action='/process_money' method="post">
+        {% csrf_token %}
+    <div class="row">
+            <div class="col s12 m7" style="width: 200px;">
+              <div class="card" >
+                <div class="card-image">
+                  <img src="../static/imgs/house.png">
+                  <span class="card-title black-text">House</span>
+                </div>
+                <div class="card-content">
+                  <p>Earn from 2-5 Gold!</p>
+                </div>
+                <div class="card-action">
+                    <input type="hidden" name="building" value="house" />
+                    <input type="submit" value="Find Gold!"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+    <form action='/process_money' method="post">
+        {% csrf_token %}
+    <div class="row">
+            <div class="col s12 m7" style="width: 200px;">
+              <div class="card">
+                <div class="card-image">
+                  <img src="../static/imgs/casino.png">
+                  <span class="card-title black-text">Casino</span>
+                </div>
+                <div class="card-content" >
+                  <p>Lose or earn up to 50 Gold!</span></p>
+                </div>
+                <div class="card-action">
+                    <input type="hidden" name="building" value="casino" />
+                    <input type="submit" value="Find Gold!"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+ </div> <!--end div locations-->
+ <div style="height:120px;width:120px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto; margin-left:10px;width: 75%">
+            <p>Activities</p>
+            
+            {%for act in request.session.activities%}
+                {%if 'Lost' in act%}
+            <p class="red">{{act}}</p>
+                {%else%}
+            <p class="green">{{act}}</p>
+                {%endif%}
+            {%endfor%}
+</div>
+</body>
+</html>

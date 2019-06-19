@@ -1,0 +1,19 @@
+queries:
+
+from apps.practice_users.models import *
+
+>>> User.objects.create(first_name='z'last_name='m',email='z@m.com' password='abc')
+
+>>> Users.objects.all().values()
+
+>>> user1 = Users.objects.get(id=1)
+
+>>> Users.objects.all().__dict__
+
+>>> Users.objects.first().__dict__
+
+>>> Users.objects.last().__dict__
+
+>>> Users.objects.all().order_by('first_name').values()
+
+>>> Users.objects.all().order_by('-first_name').values()

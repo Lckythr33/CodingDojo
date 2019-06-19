@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel = "stylesheet"
+    href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+ <script type = "text/javascript"
+    src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+ <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+ </script> 
+ 
+ <script>
+    $(document).ready(function() {
+       $('select').material_select();
+    });
+ </script>
+
+    <title>This Book!</title>
+</head>
+<body>
+    
+  <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><h3>{{this_book.title}}</h3> <h4>ID: {{this_book.id}}</h4></span>
+              <h5>Description:</h5>
+              <p>{{this_book.description}}</p>
+            <h5>Authors:</h5>
+
+            <table class='highlight'>
+                    <thead>
+                      <tr>
+                          <th>First Name:</th>
+                          <th>Last Name:</th>
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                    {% for author in authors %}
+                      <tr>
+                        <td>{{author.first_name}}</td>
+                        <td>{{author.last_name}}</td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+    
+                  <div class = "row">
+                        <form class = "col s12" action = /display_book/{{this_book.id}} method='POST'>     
+                            {%csrf_token%} 
+                           <div class = "row">
+                           <label>Authors:</label>
+                              <select name="id_author">
+                                 {% for author in all_authors %}
+                                 <option value = {{author.id}}>{{author.first_name}} {{author.last_name}}</option>
+                                 {% endfor %}
+                              </select>               
+                           </div>
+                           <button class="btn waves-effect waves-light" type="submit" name="submit">Add Author
+                        </button>
+                        </form>
+                    </div>
+            </div>
+
+            <div class="card-action">
+              <a href="/">Back to home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+          
+</body>
+</html>
