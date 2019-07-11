@@ -1,9 +1,6 @@
 const express   = require("express");
 app       = express();
 appConfig = require("./main-config");
-
-let content = {};
-
 appConfig.init(app, express);
 
 app.get("/", (req, res) => {

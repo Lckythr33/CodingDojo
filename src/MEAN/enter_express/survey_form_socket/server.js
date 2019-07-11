@@ -17,10 +17,10 @@ io.on("connection", socket => {
   socket.on("posting form", data => {
     let rand = Math.floor(Math.random() * 1000) + 1;
     console.log(data);
-    socket.emit("updated message", {...data, rand});
+    socket.emit("updated-message", {...data, rand});
   })
 })
 
 server.listen(1337, () => {
-  console.log("Server is listening on port 1234")
+  console.log("Server is listening on port 1337")
 });

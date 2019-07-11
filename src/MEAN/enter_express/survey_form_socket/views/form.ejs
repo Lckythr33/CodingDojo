@@ -34,7 +34,8 @@
               <span class="card-title">Survey Form:</span>
  <section>
         <p>You submitted to the server: <div id="data"></div></p>
-        <p>Lucky Number: <span id="lucky-number"></span></p>
+        <p>Random Number: <span id="random-number"></span></p>
+        <p><span id="updated-message"></span></p>
       </section>
                       <div class="row">
                         <div class="input-field col s12">
@@ -98,13 +99,12 @@
           var data = $(this).serializeArray();
           socket.emit("posting form", {data});
         })
-        socket.on("updated message", function(data) {
+        socket.on("updated-message", function(data) {
           console.log(data.data);
           for (let [key,val] of data.data.entries()) {
-            console.log(val)
             $("#data").append(` <p> ${val.name}: ${val.value} </p> `);
           }
-          $("#lucky-number").text(data.rand);
+          $("#random-number").text(data.rand);
         })
       </script>
 
