@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Github API</title>
+</head>
+<body>
+    
+
+<h1> Github API </h1>
+
+    <button class='mybutton'> Click me </button>
+
+    <div class='github'> 
+    </div>
+
+<script>
+
+    $(document).ready(function(){
+        var dataDiv = $('.github');
+
+
+    $('.mybutton').click(function(){
+            dataDiv.html('')
+
+            fetch('https://api.github.com/users/lckythr33')
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(data){
+                console.log(data);
+                var name = data.login
+
+                var html = '<h3> Name : '+ data.login+ '</h3>';
+                console.log(html)
+                dataDiv.append(html)
+            })
+
+            .catch(function(e){
+                console.log(e)
+            })
+
+    })
+
+        //     $.ajax({
+        //         url: 'https://api.github.com/users/lckythr33',
+        //     success: function(data){
+        //         console.log(data);
+        //         var name = data.login
+
+        //         var html = '<h3> Name : '+ data.login+ '</h3>';
+        //         console.log(html)
+        //         dataDiv.append(html)
+        //     }
+        // });
+    })
+
+
+
+</script>
+
+
+</body>
+</html>

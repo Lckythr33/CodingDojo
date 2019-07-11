@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Trivia API</title>
+</head>
+<body>
+    
+
+<h1> Trivia API </h1>
+<button value="Refresh Page" onClick="window.location.reload();">New Questions!</button>
+
+
+    <div class='question'> 
+    </div>
+
+    <div class='answer'> 
+    </div>
+
+<script>
+
+    $(document).ready(function(){
+        var answer = [];
+        var k =0
+        var qDiv = $('.question');
+        var dataDiv = $('.answer');
+        var PosAns = [];
+
+        
+        fetch('https://opentdb.com/api.php?amount=5&type=multiple')
+        .then(function(response){
+            return response.json();
+        })
+
+        .then(function(data){
+
+
+            function shuffle(a) {
+                var j, x, i;
+                    for (i = a.length - 1; i > 0; i--) {
+                        j = Math.floor(Math.random() * (i + 1));
+                        x = a[i];
+                        a[i] = a[j];
+                        a[j] = x;
+                    }
+            return a;
+            }
+
+
+
+            for(var i =0 ; i < data.results.length ; i++){
+
+                PosAns = [];
+
+            PosAns.push(data.results[i].incorrect_answers[0])
+            PosAns.push(data.results[i].incorrect_answers[1])
+            PosAns.push(data.results[i].incorrect_answers[2])
+            PosAns.push(data.results[i].correct_answer)
+
+            PosAns = shuffle(PosAns)
+
+
+            qDiv.append('<h3> Question'+ (i+1) +": " + data.results[i].question + '</h3>');
+            qDiv.append('<h3> a) '+ PosAns[0] + '<br> b) '  +  PosAns[1] + '<br> c) ' + PosAns[2] + "<br> d) " + PosAns[3] + '</h3>')
+            qDiv.append("<button class='mybutton'> Answer </button>")
+            qDiv.append('<div class =answer'+ i + '>' +  '</div>')
+            answer.push(data.results[i].correct_answer)
+        }
+            
+            $('.mybutton').click(function(){
+                if(k <= answer.length-1){
+                $('.answer'+k).append('<h3>Answer: '+ answer[k] + '</h3>')
+                k++
+            }
+        })
+
+
+        })
+        .catch(function(e){
+                console.log(e)
+        })
+
+
+})
+
+
+
+</script>
+
+
+</body>
+</html>

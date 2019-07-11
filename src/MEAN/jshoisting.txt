@@ -1,0 +1,15 @@
+1. variable not declared before console log
+
+2. magnet
+
+3. variable not declared
+
+4. variable not declared before assignment
+
+5. function not declared before call
+
+6. undefined, genre not defined before assignment
+
+7. san jose, learn function not declared before call
+
+8. make dojo not created before call

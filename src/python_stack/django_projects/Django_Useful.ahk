@@ -41,4 +41,4 @@ Send, User.objects.create(first_name="", last_name= "", email="", password ="")
 return
 
 Numpad6::
-Send, User.objects.all().values()
+Send, Product.objects.create(name="", img= "", cost="", min_contrib="")

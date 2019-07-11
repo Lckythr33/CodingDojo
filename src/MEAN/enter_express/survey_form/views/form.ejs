@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Survey Form</title>
+  <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+  <link rel = "stylesheet"
+     href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+  <script type = "text/javascript"
+     src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+  </script> 
+  
+  <script>
+  $(document).ready(function() {
+        $('select').material_select();
+  });
+  </script>
+</head>
+
+<body>
+  <div class="row">
+      <form action='/survey' method='POST' class="col s7">
+        <div class="col s7 m7">
+          <div class="card cyan darken-4">
+            <div class="card-content white-text">
+              <span class="card-title">Survey Form:</span>
+
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input name="name" type="text" class="validate">
+                          <label for="name">Your Name:</label>
+                        </div>
+                      </div>
+                  
+                  <div class="row">
+                    <div class="input-field col s12">
+                    <select name='location'>
+                      <option value="" disabled selected>Choose your location</option>
+                      <option value="Burbank">Burbank</option>
+                      <option value="Crapola">Crapola</option>
+                      <option value="Shiteldor">Shiteldor</option>
+                    </select>
+                    <label>Dojo Location:</label>
+                  </div>
+                </div>
+                  
+                  <div class="row">
+                    <div class="input-field col s12">
+                    <select name='language'>
+                      <option value="" disabled selected>Choose your favorite language</option>
+                      <option value="JavaScript">JavaScript</option>
+                      <option value="Python">Python</option>
+                      <option value="Java">Java</option>
+                    </select>
+                    <label>Favorite Language:</label>
+                  </div>
+                </div>
+
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <textarea name="comment" class="materialize-textarea"></textarea>
+                        <label for="comment">Comments:</label>
+                      </div>
+                  </div>
+
+                  <button class="btn waves-effect waves-light" type="submit" value="submitted">Submit
+                      <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>

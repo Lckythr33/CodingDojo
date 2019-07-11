@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+    <link rel = "stylesheet"
+       href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel = "stylesheet"
+       href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type = "text/javascript"
+       src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script> 
+       
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+
+    <title>Account Info</title>
+</head>
+<body>
+
+        <nav>
+            <div class="nav-wrapper left-align">
+                <a href="/" style='font-size:50px;' class="brand-logo">FOGO</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Account</a></li>
+                    <li><a href="/services">Services</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class = "row">
+                <form class = "col s12">
+                   <div class = "input-field">               
+                      <label>Materialize DatePicker</label>              
+                      <input type = "text" class = "datepicker" />    
+                   </div>            
+                </form>       
+             </div>
+
+    <script>
+        $('.datepicker').pickadate({
+            selectMonths: true, // Enable Month Selection
+            selectYears: 10 // Creates a dropdown of 10 years to control year
+        });
+
+        $('.datepicker').on('mousedown',function(event){
+            event.preventDefault();
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Survey Form</title>
+  <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+  <link rel = "stylesheet"
+     href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+  <script type = "text/javascript"
+     src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+  </script> 
+  
+  <script>
+  $(document).ready(function() {
+        $('select').material_select();
+  });
+  </script>
+</head>
+
+<body>
+  <div class="row">
+        <div class="col s3">
+          <div class="card cyan darken-4">
+            <div class="card-content white-text">
+              <span class="card-title">User Info:</span>
+
+                <h5>Name: <%= user.name %></h5> 
+                <h5>Location: <%= user.location %></h5> 
+                <h5>Language: <%= user.language %></h5> 
+                <h5>Comment: <%= user.comment %></h5> 
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>
