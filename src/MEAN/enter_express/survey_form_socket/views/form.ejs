@@ -33,7 +33,7 @@
             <div class="card-content white-text">
               <span class="card-title">Survey Form:</span>
  <section>
-        <p>You submitted to the server: <span id="server-data"></span></p>
+        <p>You submitted to the server: <div id="data"></div></p>
         <p>Lucky Number: <span id="lucky-number"></span></p>
       </section>
                       <div class="row">
@@ -102,7 +102,7 @@
           console.log(data.data);
           for (let [key,val] of data.data.entries()) {
             console.log(val)
-            $("#server-data").append(` <p> ${val.name}: ${val.value} </p> `);
+            $("#data").append(` <p> ${val.name}: ${val.value} </p> `);
           }
           $("#lucky-number").text(data.rand);
         })
