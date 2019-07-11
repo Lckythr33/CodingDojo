@@ -1,40 +1,26 @@
-var express = require("express");
+const app    = require("./app");
+      
 
-var app = express();
-var user;
+    http    = require("http");
+     
+    //link to app
+      server  = http.createServer(app);
+     
+     //set socket server 
+      io      = require("socket.io")(server);
 
-// this is the line that tells our server to use the "/static" folder for static content
-app.use(express.static(__dirname + "/static"));
-// This sets the location where express will look for the ejs views
-app.set('views', __dirname + '/views'); 
-// Now lets set the view engine itself so that express knows that we are using ejs as opposed to another templating engine like jade
-app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);
-// require body-parser
-var bodyParser = require('body-parser');
-// use it!
-app.use(bodyParser.urlencoded({extended: true}));
-
-
-app.get('/', function(request,response){
-    response.render("form");
+io.on("connection", socket => {
+  socket.emit("greeting", {hello: "Hello! Socket connected."});
+  socket.on("Socket Connected", data => {
+    console.log(data);
+  })
+  socket.on("posting form", data => {
+    let rand = Math.floor(Math.random() * 1000) + 1;
+    console.log(data);
+    socket.emit("updated message", {...data, rand});
+  })
 })
 
-app.post('/survey', function (req, res){
-    user = {name : req.body.name ,
-            location : req.body.location, 
-            language: req.body.language, 
-            comment: req.body.comment}
-    res.redirect('/results') 
+server.listen(1337, () => {
+  console.log("Server is listening on port 1234")
 });
-
-
-// route to process new user form data:
-app.get('/results', function (req, res){
-    res.render('display', {user:user})
-});
-
-
-app.listen(1234, function(){
-    console.log("listening on 1234")
-})

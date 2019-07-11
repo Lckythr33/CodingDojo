@@ -22,13 +22,20 @@
 </head>
 
 <body>
+
+   
+
+
   <div class="row">
-      <form action='/survey' method='POST' class="col s7">
+      <form action='/result' method='POST' class="col s7" id="submit-form">
         <div class="col s7 m7">
           <div class="card cyan darken-4">
             <div class="card-content white-text">
               <span class="card-title">Survey Form:</span>
-
+ <section>
+        <p>You submitted to the server: <span id="server-data"></span></p>
+        <p>Lucky Number: <span id="lucky-number"></span></p>
+      </section>
                       <div class="row">
                         <div class="input-field col s12">
                           <input name="name" type="text" class="validate">
@@ -75,6 +82,31 @@
           </div>
         </div>
       </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script >
+        var socket = io();
+        
+        socket.on("greeting", function(data) {
+          console.log(data);
+          socket.emit("thank you", {thanks: "thank you"});
+        })
+        
+        $("#submit-form").submit(function(event){
+          event.preventDefault();
+          var data = $(this).serializeArray();
+          socket.emit("posting form", {data});
+        })
+        socket.on("updated message", function(data) {
+          console.log(data.data);
+          for (let [key,val] of data.data.entries()) {
+            console.log(val)
+            $("#server-data").append(` <p> ${val.name}: ${val.value} </p> `);
+          }
+          $("#lucky-number").text(data.rand);
+        })
+      </script>
 
 </body>
 </html>
