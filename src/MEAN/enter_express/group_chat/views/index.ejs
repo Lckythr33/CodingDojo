@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+          
+  <title>Group Chat</title>
+</head>
+<body>
+  <div class="container">
+  
+  </div>
+
+
+
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card teal darken-4">
+        <div class="card-content white-text">
+          <span class="card-title">Conversation Board:</span>
+          <div class="message-board">
+      
+          </div>
+          <form id="form" class="form-group">
+            <input type="text" placeholder="Enter your message here" name="message" class="form-control">
+        
+        </div>
+        <div class="card-action">
+          <button id="click-counter"class="btn waves-effect waves-light" type="submit" name="action">Send
+            <i class="material-icons right">input</i>
+          </button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    
+    var socket = io();
+    
+    socket.emit("isNewUser", {userId: "<%= userId %>"});
+
+    socket.on("isNewUser", data => {
+      if (data.newUser) {
+        const username = window.prompt("Your name:");
+        socket.emit("addNewUser", {name: username, userId: "<%= userId %>"});
+      } 
+    })
+
+    socket.on("allMessages", data => {
+      for (let [key,val] of data.messages.entries()) {
+        console.log(val.userId)
+        $(".message-board").append(`
+        <div class='card teal darken-3'>
+          <p><strong><em>${val.name}</em></strong>: ${val.msg}</p>
+        </div>
+        `)
+      }
+    })
+
+    socket.on("messages", data => {
+      console.log(data.userId);
+      $(".message-board").append(`
+      <div class='card teal lighten-1'>
+        <p><strong><em>${data.name}</em></strong>: ${data.msg}</p>
+        </div>
+      `)
+    })
+
+    $("#form").submit(function(event) { 
+      event.preventDefault();
+      var data = $(this).serializeArray();
+      socket.emit("newMessage", {msg: data[0].value, userId: "<%= userId %>"});
+    })
+
+  </script>
+</body>
+</html>

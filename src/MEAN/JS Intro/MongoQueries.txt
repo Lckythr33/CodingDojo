@@ -1,0 +1,56 @@
+my_first_db
+> show dbs
+admin        0.000GB
+config       0.000GB
+local        0.000GB
+my_first_db  0.000GB
+> db.students.insert({name:'Josh', home_state:'Texas', lucky_number: '9', birthday: })
+2019-07-11T22:33:26.118-0700 E QUERY    [js] SyntaxError: expected expression, got '}' @(shell):1:82
+> db.students.insert({name:'Josh', home_state:'Texas', lucky_number: '9', birthday:{month:'11',day:'03', year:'1993'} })
+WriteResult({ "nInserted" : 1 })
+> db.students.find()
+{ "_id" : ObjectId("5d281c486abc2a5605f9f637"), "name" : "Josh", "home_state" : "Texas", "lucky_number" : "9", "birthday" : { "month" : "11", "day" : "03", "year" : "1993" } }
+>
+
+ db.students.find({home_state:"Ohio"})
+Find all with home state of ohio
+
+> db.students.find({lucky_number : {$gt:3} })
+Find students with lucky num greater than 3
+
+> db.students.find({lucky_number : {$lte:10} })
+Find students with lucky num less than or = 10
+
+db.students.find({ $and:[{ lucky_number: {$lte:10}} , {lucky_number: {$gt:1}}] })
+
+> db.students.remove({interests:['coding','brunch','mongodb']})
+Remove where
+
+Add a field 
+ db.students.update({ }, {$set:{'interests':['coding','brunch','mongodb']}},false, true)
+
+db.students.update({name: "Josh"},{$pop: {interests : (1)}})
+Remove one field from array in object
+
+ db.students.remove({lucky_number:{$gt:5}},true)
+WriteResult({ "nRemoved" : 1 })
+Remove just one where lucky number greater than 5
+
+> db.students.update({ }, {$set:{'number_of_belts':0}},false, true)
+WriteResult({ "nMatched" : 4, "nUpserted" : 0, "nModified" : 4 })
+
+db.students.update({home_state:'Washington'}, {$inc:{number_of_belts:1}},false, true)
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+
+db.students.update({ }, {$rename:{'number_of_belts' : 'belts_earned'}},false, true)
+WriteResult({ "nMatched" : 7, "nUpserted" : 0, "nModified" : 7 })
+
+
+db.students.update({ }, {$unset:{"lucky_number":""}},false, true)
+Remove field
+
+db.students.update({ }, {$currentDate:{'updated_on':{$type:'date'}}},false, true)
+WriteResult({ "nMatched" : 7, "nUpserted" : 0, "nModified" : 7 })
+Update with current date
+
+
