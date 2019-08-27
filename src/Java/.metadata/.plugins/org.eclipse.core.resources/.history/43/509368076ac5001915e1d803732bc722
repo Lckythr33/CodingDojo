@@ -1,0 +1,12 @@
+package com.ztech.logandreg.repos;
+
+import javax.validation.Valid;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.ztech.logandreg.models.Event;
+
+public interface EventRepo extends CrudRepository<Event, Long> {
+	List<Event> findAll();
+}
+	

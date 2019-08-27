@@ -1,0 +1,34 @@
+package com.ztech.logandreg.controllers;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ztech.logandreg.models.Event;
+import com.ztech.logandreg.models.User;
+import com.ztech.logandreg.services.EventService;
+
+public class EventCtrl {
+
+	@Autowired
+	private EventService eS;
+	
+	
+	@PostMapping("/events")
+	public String addEvent(@Valid @ModelAttribute("eventsObj") Event event, BindingResult result) {
+		if(result.hasErrors()) {
+			return "homePage.jsp";
+		}
+		else {
+			eS.createEvent(event);
+			return "redirect:/home";	
+		}	
+	}
+	
+}

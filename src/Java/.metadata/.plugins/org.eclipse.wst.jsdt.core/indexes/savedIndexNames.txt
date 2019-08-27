@@ -1,0 +1,16 @@
+INDEX VERSION 1.4+D:\devBeast\Documents\CodingDojo\src\Java\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+991914049.index
+2874164975.index
+4033657086.index
+1894260444.index
+2606541396.index
+395582505.index
+3735425080.index
+2302494143.index
+2380175872.index
+3476261145.index
+2673207973.index
+3080716010.index
+127028046.index
+2949535185.index
+2257446204.index

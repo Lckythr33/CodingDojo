@@ -1,0 +1,16 @@
+package com.ztech.dojos.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class DojoCtrl {
+
+	@RequestMapping("/")
+	public String newDojo(Model model) {
+		model.addAttribute("dojoObj", new Dojo());
+		return "/dojos/new.jsp";
+	}
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;javaBelt/src/main/webapp/WEB-INF/courseInfo.jsp&apos; to &apos;courseinfo.jsp&apos;" description="Rename resource &apos;courseInfo.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/courseInfo.jsp" name="courseinfo.jsp" stamp="1566581219952" updateReferences="true"/>
+</session>

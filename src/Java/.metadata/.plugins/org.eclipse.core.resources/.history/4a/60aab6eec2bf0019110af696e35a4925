@@ -1,0 +1,95 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
+    <%@ page isErrorPage = "true" %>
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+
+<meta charset="ISO-8859-1">
+<title>New Book</title>
+</head>
+<body>
+
+<!-- Material form subscription -->
+<div class="card w-25">
+
+    <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Edit Book!</strong>
+    </h5>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5">
+
+
+ <p><form:errors path="bookObject.*"/></p> <%-- //show all errors above --%>
+
+        <!-- Form -->
+        <form:form class="text-center" style="color: #757575;" action="/books/${bookObject.id}" method="POST" modelAttribute="bookObject">
+  			<input type="hidden" name ="_method" value="put" />
+
+            <p>Edit your book in the DB!</p>
+
+<!--             <p> -->
+<!--                 <a href="" target="_blank">See the last newsletter</a> -->
+<!--             </p> -->
+
+            <!-- Title -->
+            <div class="md-form mt-3">
+                <form:input path="title" type="text" class="form-control"/>
+                <label for="materialSubscriptionFormPasswords">Title</label>
+            </div>
+
+			      <!-- Description -->
+            <div class="md-form mt-3">
+                <form:input path="description" type="text"  class="form-control"/>
+                <label for="materialSubscriptionFormPasswords">Description</label>
+            </div>
+            
+                  <!-- Author -->
+            <div class="md-form mt-3">
+                <form:input path="language" type="text" class="form-control"/>
+                <label for="materialSubscriptionFormPasswords">Language</label>
+            </div>
+            
+                  <!-- Name -->
+            <div class="md-form mt-3">
+                <form:input path="numberOfPages" type="number" class="form-control"/>
+                <label for="materialSubscriptionFormPasswords">Num of Pages</label>
+            </div>
+          
+
+            <!-- Submit button -->
+            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Submit!</button>
+
+        </form:form>
+        <!-- Form -->
+        <a href="/" class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect">Cancel!</a>
+
+    </div>
+
+</div>
+<!-- Material form subscription -->
+
+
+
+
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+</body>
+</html>

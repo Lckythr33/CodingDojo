@@ -1,0 +1,29 @@
+package com.ztech.dojos.controllers;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ztech.dojos.models.Dojo;
+
+@Controller
+public class DojoCtrl {
+
+	@RequestMapping("/")
+	public String newDojo(@ModelAttribute("dojoObj") Dojo dojo) {
+		return "/dojos/new.jsp";
+	}
+	
+	@PostMapping("/dojos")
+	public String createDojo(@Valid @ModelAttribute("dojoObj") Dojo dojo, BindingResult result) {
+		if(result.hasErrors()) {
+			return "/dojos/new.jsp";
+		}		else {
+	
+		}
+	}
+}

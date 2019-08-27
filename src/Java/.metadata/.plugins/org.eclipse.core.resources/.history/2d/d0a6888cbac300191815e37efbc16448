@@ -1,0 +1,6 @@
+package com.ztech.dojos.repositories;
+
+public interface NinjaRepo extends CrudRepository<Ninja,Long>{
+
+	
+}

@@ -1,0 +1,20 @@
+package com.ztech.dojos.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.ztech.dojos.services.AppService;
+
+@Controller
+public class NinjaCtrl {
+	
+	@Autowired
+	private AppService aS;
+	
+	@GetMapping("/ninjas/new")
+	public String newNinja() {
+		return "/ninjas/new.jsp";
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.ztech.logandreg.repos;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.ztech.logandreg.models.Event;
+
+public interface EventRepo extends CrudRepository<Event, Long> {
+
+}

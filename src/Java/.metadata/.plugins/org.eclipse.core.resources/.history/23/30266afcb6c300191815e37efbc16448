@@ -1,0 +1,14 @@
+package com.ztech.dojos.controllers;
+
+@Controller
+public class NinjaCtrl {
+	
+	@Autowired
+	private AppService aS;
+	
+	@GetMapping("/ninjas/new")
+	public String newNinja() {
+		return "/ninjas/new.jsp";
+	}
+
+}

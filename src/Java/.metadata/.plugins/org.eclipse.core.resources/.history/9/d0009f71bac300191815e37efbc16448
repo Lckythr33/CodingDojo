@@ -1,0 +1,37 @@
+package com.ztech.dojos.services;
+
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ztech.dojos.models.Dojo;
+import com.ztech.dojos.models.Ninja;
+import com.ztech.dojos.repositories.DojoRepo;
+
+@Service
+public class AppService {
+
+	@Autowired
+	private DojoRepo dR;
+//	@Autowired
+//	private NinjaRepo nR;
+
+	public void createDojo(@Valid Dojo dojo) {
+		dR.save(dojo);
+	}
+
+	public List<Dojo> getAllDojos() {
+		return dR.findAll();
+	}
+
+	public void createNinja(@Valid Ninja ninja) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
+ 

@@ -1,0 +1,18 @@
+package com.ztech.logandreg.services;
+
+import javax.validation.Valid;
+
+import com.ztech.dojos.models.Dojo;
+import com.ztech.logandreg.models.Event;
+import com.ztech.logandreg.repos.EventRepo;
+
+public class EventService {
+
+	@Autowired
+	private EventRepo eR;
+	
+	public void createDojo(@Valid Event event) {
+		eR.save(event);
+	}
+	
+}

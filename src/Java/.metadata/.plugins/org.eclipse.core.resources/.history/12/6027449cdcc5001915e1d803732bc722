@@ -1,0 +1,28 @@
+package com.ztech.logandreg.repos;
+
+import java.util.List;
+
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.ztech.logandreg.models.Course;
+
+@Repository
+public interface CourseRepository extends CrudRepository<Course, Long> {
+	List<Course> findAll();
+	
+	public List<Course> findAllByOrderByCapacityAsc();
+	public List<Course> findAllByOrderByIdDesc();
+	
+//	List<Course> sortByCapAsc();
+
+	
+//	@Query(value="SELECT * FROM courses ORDER BY Priority ASC", nativeQuery=true)
+//	List<Course> findAllPriorityLowToHigh(); 
+//	@Query(value="SELECT * FROM courses ORDER BY Capacity DESC", nativeQuery=true)
+//	List<Course> findAllHighToLow(); 
+	
+}
+

@@ -1,0 +1,5 @@
+package com.ztech.logandreg.services;
+
+public class CourseService {
+
+}

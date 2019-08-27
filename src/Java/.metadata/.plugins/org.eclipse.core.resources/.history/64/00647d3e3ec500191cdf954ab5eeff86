@@ -1,0 +1,19 @@
+package com.ztech.logandreg.services;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ztech.logandreg.models.Event;
+import com.ztech.logandreg.repos.EventRepo;
+
+public class EventService {
+
+	@Autowired
+	private EventRepo eR;
+	
+	public void createEvent(@Valid Event event) {
+		eR.save(event);
+	}
+
+}
